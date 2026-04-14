@@ -13,13 +13,13 @@ def addTask():
 
 def markTaskDone():
     for i, l in enumerate(tasksList):
-        print(f"{i+1} - {i} - {l}")
+        print(f"{i+1} - {l} {doneTasks[i]}")
     task = int(input("Digite a tarefa a ser marcada como feita: "))
     doneTasks[task-1] = "[V]"
 
 def removeTask():
     for i, l in enumerate(tasksList):
-        print(f"{i+1} - {i} - {l}")
+        print(f"{i+1} - {l} - {doneTasks[i]}")
     task = int(input("Digite a tarefa a ser removida: "))
     tasksList.remove(task)
     doneTasks.remove(task)
