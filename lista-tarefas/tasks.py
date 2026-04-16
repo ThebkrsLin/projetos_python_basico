@@ -12,15 +12,26 @@ def addTask():
     doneTasks.append("[X]")
 
 def markTaskDone():
-    for i, l in enumerate(tasksList):
-        print(f"{i+1} - {l} {doneTasks[i]}")
-    task = int(input("Digite a tarefa a ser marcada como feita: "))
-    doneTasks[task-1] = "[V]"
+    index = errorTreat(1)
+    doneTasks[index] = "[V]"
 
 def removeTask():
-    for i, l in enumerate(tasksList):
-        print(f"{i+1} - {l} - {doneTasks[i]}")
-    task = int(input("Digite a tarefa a ser removida: "))
-    tasksList.remove(task)
-    doneTasks.remove(task)
+    index = errorTreat(2)
+    tasksList.pop(index)
+    doneTasks.pop(index)
 
+def errorTreat(function):
+    while True:
+        try:
+            for i, l in enumerate(tasksList):
+                print(f"{i+1} - {l} - {doneTasks[i]}")
+            number = int(input("Digite a tarefa a ser removida: "if function == 2 else "Digite a tarefa a ser concluida: "))
+
+        except (ValueError, TypeError):
+            print("O Valor Digita não é um número, tente novamente...")
+            str(input("Aperte Enter para continuar...."))
+        else:
+            if number > len(tasksList):
+                print("Opção inválida, tente novamente!!!!")
+                str(input("Aperte Enter para continuar...."))
+            else: return int(number-1)
