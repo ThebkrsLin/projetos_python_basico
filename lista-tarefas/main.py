@@ -4,7 +4,7 @@ from time import sleep
 #Main Lines
 while True:
     print("-="*40)
-    print("             :>25Lista de Tarefas")
+    print(f"                            Lista de Tarefas")
     print("-="*40)
     print("1 - Ver Lista")
     print("2 - Adicionar tarefa")
