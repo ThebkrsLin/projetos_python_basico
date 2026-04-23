@@ -7,7 +7,7 @@ while True:
         addc = int(input("Quantas colunas você quer adicionar na matrix?: "))
 
     except:
-        print("O valor digitado Não é um número, tente novamente!!")
+        print("O valor digitado Não é um número inteiro, tente novamente!!")
 
     else:
         if(addc > 0 and addl > 0):
