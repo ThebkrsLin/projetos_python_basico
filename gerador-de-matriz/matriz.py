@@ -15,8 +15,6 @@ while True:
             sleep(1)
             for l in range(0, addl):
                 matrix.append([])
-                for c in range(0, addc):
-                    matrix[l].append([])
             print("Matriz criada com sucesso!!!")
             choose = str(input("Quer gerar os valores da matriz automaticamente?[S/N]: ")).upper().strip()
 
@@ -25,19 +23,19 @@ while True:
                     case "S": 
                         for l in range(0, addl):
                             for c in range(0, addc):
-                                matrix[l][c].append(randint(0, 999))
+                                matrix[l].append(randint(0, 999))
 
                     case "N":
                         for l in range(0, addl):
                             for c in range(0, addc):
-                                matrix[l][c].append(int(input(f"Digite o valor na posição[{l+1}, {c+1}]: ")))
+                                matrix[l].append(int(input(f"Digite o valor na posição[{l+1}, {c+1}]: ")))
 
                     case Default:
                         print("Opção inválida tente novamente")
                     
                 break
 
-            print("Matriz:", end=" ")
+            print("Matriz:")
             for l in range(0, addl):
                 print("[", end=" ")
                 for c in range(0, addc):
